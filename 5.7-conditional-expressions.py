@@ -7,8 +7,14 @@ Section 5.7: More on Conditions
 
 
 print '''
-2. 'is' == '==', and 'is not' == '!='
-n.b. type must match, i.e., set(a) != tuple(a)
+2. 'is' != '==', and 'is not' != '!=' !!!!!!
+- The operators is and is not compare whether two objects are really the same object;
+  this only matters for mutable objects like lists.
+--- [it does NOT compare values!!]
+
+http://stackoverflow.com/questions/2576826/pythons-preferred-comparison-operators
+- x is y is true if and only if id(x) == id(y) 
+--- that is, x and y have to be one and the same object (with the same ids).
 
 >>> 1 is 1'''
 print 1 is 1                            # True
@@ -16,6 +22,23 @@ print ">>> 1 is 2"
 print 1 is 2                            # False
 print ">>> 1 is not 2"
 print 1 is not 2                        # True
+
+print ">>> s = 'abc'"
+print ">>> s is 'abc'"
+s = 'abc'
+print s is 'abc'                        # True!? because string literals are immutable??
+
+print "x, y = 1, 1"
+x, y = 1, 1
+print ">>> x is y"                      # also True...
+print x is y
+
+print '''
+Beware!!! __name__ is a special object, and "is" testing will not check value correctly...'''
+print "__name__ is '__main__':", __name__ is '__main__'
+print "__name__ == '__main__':", __name__ == '__main__'
+
+
 
 print '''
 3. Interestingly, comparison operators can be chained!!
