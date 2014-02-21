@@ -60,4 +60,10 @@ Moar weirdness: unordered sequences can only be tested for EQUALITY, and not gt/
 - NOT sure how dict/numerical comparisons are made
 - [set1] > [set2] returns False ALWAYS???
 
-soooooooo much undefined behavior'''
+soooooooo much undefined behavior
+
+AHA! Footnote:
+[1]	The rules for comparing objects of different types should not be relied upon; they may change in a future version of the language
+
+in other words, the behavior more or less IS undefined...
+'''
