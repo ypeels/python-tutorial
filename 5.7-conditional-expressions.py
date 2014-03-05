@@ -81,7 +81,13 @@ Moar weirdness: unordered sequences can only be tested for EQUALITY, and not gt/
 - dict > seq returns TypeError for ALL sequence types except dict
 - NOT sure how dict comparisons are made... dicts in alphabetical order?
 - NOT sure how dict/numerical comparisons are made
-- [set1] > [set2] returns False ALWAYS???
+
+- [set1] > [set2] returns False ALWAYS??? no, my first impression was wrong
+-- http://docs.python.org/2/library/stdtypes.html#set-types-set-frozenset
+--- Two sets are equal if and only if every element of each set is contained in the other (each is a subset of the other).
+--- A set is less than another set if and only if the first set is a proper subset of the second set (is a subset, but is not equal).
+--- A set is greater than another set if and only if the first set is a proper superset of the second set (is a superset, but is not equal).
+
 
 soooooooo much undefined behavior
 
